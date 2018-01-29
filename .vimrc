@@ -16,8 +16,6 @@ call dein#add('Yggdroot/indentLine')
 let g:indentLine_char = 'x'
 let g:indentLine_color_term = 238
 call dein#add('altercation/vim-colors-solarized')
-colorscheme solarized
-set background=dark
 call dein#end()
 
 "syntastic
@@ -35,6 +33,8 @@ autocmd BufRead,BufNewFile *.es6 setfiletype javascript
 
 "syntax
 syntax enable
+colorscheme solarized
+set background=dark
 "vi互換を切る
 "set nocompatible
 "念のため
