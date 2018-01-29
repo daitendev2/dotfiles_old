@@ -57,8 +57,8 @@ vim .gitconfig
 
 ---
 
-## 2. dein vim & tmux
-Clone dein repo & install tmux
+## 2. zsh & dein vim & tmux
+Clone dein repo & install zsh, tmux
 ```bash
 cd ~/dotfiles
 sh installer.sh
