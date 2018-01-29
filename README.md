@@ -7,7 +7,7 @@ git --version
 ```
 
 ### 1-1. When creating a new repository
-init
+Init
 ```bash
 cd ~/
 mkdir dotfiles
@@ -15,14 +15,14 @@ cd dotfiles
 git init
 ```
 
-config
+Config
 ```bash
 git config user.name die10jp
 git config user.email xxx@die10.jp
 git config --list
 ```
 
-commit and push
+Commit and push to this repository
 ```bash
 touch haange.txt
 git add hanage.txt
@@ -32,20 +32,43 @@ git push -u origin master
 ```
 
 ### 1-2. When the repository already exists
+Clone this repository
+```bash
+cd ~
+git clone https://github.com/die10jp/dotfiles.git
+```
+
+Fix .gitconfig's email
+```bash
+cd dotfiles
+vim .gitconfig
+```
+
+```.gitconfig
+[user]
+  name = die10jp
+  email = xxx@die10.jp # FIXME
+[alias]
+  co  = checkout
+  st  = status
+  cmt = commit
+  br  = branch
+```
 
 ---
 
 ## 2. dein vim & tmux
-clone dein & install tmux
+Clone dein repo & install tmux
 ```bash
 cd ~/dotfiles
 sh installer.sh
 sh filelinker.sh
 ```
 
-install vim plugins
+Install vim plugins
 ```bash
-cd ~
-vim .vimrc
+vim <any file>
 :call dein#install()
 ```
+
+おわり🌱
