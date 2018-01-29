@@ -28,24 +28,23 @@ let g:syntastic_always_populate_loc_list = 0
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_loc_list_height = 6
 
-"forES6
-autocmd BufRead,BufNewFile *.es6 setfiletype javascript
-
 "syntax
 syntax enable
 colorscheme solarized
 set background=dark
-"vi互換を切る
-"set nocompatible
-"念のため
+"for ES6
+autocmd BufRead,BufNewFile *.es6 setfiletype javascript
+
+"utf-8
 set encoding=utf-8
+"vi互換を切る
+set nocompatible
 "swapとかbackup作らない
 set noswapfile autowrite nobackup nowritebackup
 "編集中のファイルが変更されたら自動再読込
 set autoread
 "ヴィジュアルベル禁止
 set vb t_vb=
-
 
 ""入力支援
 "行番号
@@ -57,15 +56,10 @@ set wrap
 "折り返し行も表示通りに移動
 nnoremap j gj
 nnoremap k gk
-"カーソル行背景色変更
-"set cursorline
-"カーソル位置カラム背景色変更
-"set cursorcolumn
 "スクロールしてもn行先まで見える
 set scrolloff=4
 "改行を超えてbackspaceを有効にする
 set backspace=indent,eol,start
-
 
 ""TAB関連
 "tabを半角spaceにする
@@ -79,13 +73,9 @@ set softtabstop=2
 set smartindent
 "□○が崩れるのを抑制
 set ambiwidth=double
-
-
-""status bar関連
-set laststatus=2
-"メッセージ表示欄1行
-set cmdheight=1
-
+"タブ、空白、改行の可視化
+set list
+set listchars=tab:»-,trail:_,nbsp:%
 
 "検索関連
 "検索マッチテキストの強調表示
@@ -99,7 +89,6 @@ set smartcase
 "検索終了後先頭に戻らない
 set wrapscan
 
-
 "command関連
 " コマンドラインの補完
 set wildmenu
@@ -109,20 +98,11 @@ set showcmd
 "VISUAL MODEなどを表示
 set showmode
 
+""status line関連
+set laststatus=2
 set statusline=[%n]\ %f\ %y%h%w%m%r\ 0x%B(%b)\ <%l\,%c%V>%L
-"set formatoptions+=mM
-
-"空括弧を閉じたら自動で括弧内に移動
-"imap () ()<Left>
-"imap {} {}<Left>
-"imap [] []<Left>
-"imap "" ""<Left>
-"imap '' ''<Left>
-
-
-"タブ、空白、改行の可視化
-set list
-set listchars=tab:»-,trail:_,nbsp:%
+"メッセージ表示欄1行
+set cmdheight=1
 
 ""全角スペースをハイライト表示
 function! ZenkakuSpace()
